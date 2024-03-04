@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url(/fonts/PPNeueMontreal-Regular.woff2) format("woff2"),
+        url(/fonts/PPNeueMontreal-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap
+}
+
+@font-face {
+    font-family: 'Neue Montreal';
+    src: url(/fonts/PPNeueMontreal-Medium.woff2) format("woff2"),
+        url(/fonts/PPNeueMontreal-Medium.woff2) format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap
+}
+
+
+@layer base {
+    /* Base */
+    *, 
+    *::before, 
+    *::after, 
+    html {
+        @apply relative antialiased overscroll-none;
+    }
+
+    ::selection{
+        @apply bg-neutral-150 text-neutral-950;
+    }
+
+    body {
+        @apply bg-neutral-950 text-neutral-150 text-[18px] font-neue-montreal;
+    }
+}
+
+@layer components {
+    /* Components */
+    .text-visually-hidden {
+        @apply absolute top-0 left-0 w-[1px] h-[1px] opacity-0 clip-inset-0;
+    }
+    .theme-grid {
+        @apply grid grid-cols-4 lg:grid-cols-12 gap-x-4;
+    }
+    .custom-border {
+        @apply w-full h-[1px] bg-neutral-800 ;
+    }
+}
+
+@layer utilities {
+    /* Utilities */
+    .clip-inset-0 {
+        clip-path: inset(0)
+    }
+}
